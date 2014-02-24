@@ -1,0 +1,34 @@
+{
+  "name": "mp3me",
+  "version": "0.1.0",
+  "description": "Generate an audio podcast from Youtube and other videos",
+  "main": "index.js",
+  "bin": {
+    "mp3me": "generate_ernie_podcast_xml.js"
+  },
+  "scripts": {
+    "test": "test/test.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ehershey/mp3me.git"
+  },
+  "keywords": [
+    "youtube",
+    "video",
+    "podcast",
+    "rss",
+    "video",
+    "audio",
+    "converstion",
+    "download",
+    "mp3",
+    "converter"
+  ],
+  "author": "Ernie Hershey <npm@ernie.org>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ehershey/mp3me/issues"
+  },
+  "homepage": "https://github.com/ehershey/mp3me"
+}
