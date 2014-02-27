@@ -26,11 +26,18 @@ do
   elif echo "$file" | grep -q \\.mp4$
   then
     echo "Video/mp4 file"
+    audio_file=$(echo $file | sed 's/mp4$/mp3/')
+    echo ffmpeg -i $file $audio_file
   # file with youtube URL
   #
   elif grep -q ^http.*youtube.com/ "$file"
   then
     echo "File containing URL"
+    for url in $(grep ^http.*youtube.com/ "$file")
+    do
+      echo youtube-dl -f 17 --title "$url"
+    done
+
   fi
 done
 
