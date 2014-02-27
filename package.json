@@ -30,5 +30,8 @@
   "bugs": {
     "url": "https://github.com/ehershey/mp3me/issues"
   },
-  "homepage": "https://github.com/ehershey/mp3me"
+  "homepage": "https://github.com/ehershey/mp3me",
+  "dependencies": {
+    "podcast": "~0.1.0"
+  }
 }
