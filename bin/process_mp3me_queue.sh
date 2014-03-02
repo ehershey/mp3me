@@ -1,46 +1,92 @@
-#!/bin/sh
+#!/bin/bash
+set -x
 
-incoming_dir=$(ls -d /{home,Users}/ernie/Dropbox/Misc/mp3me/queue/incoming 2>/dev/null)
+# Error on unset variables
+#
+set -o nounset
 
-podcast_xml_path=$(ls -d /{home,Users}/ernie/Dropbox/Web/ 2>/dev/null)/ernie-podcast.xml
+incoming_dir=~/Dropbox/Misc/mp3me/queue/incoming
+processing_dir=~/Dropbox/Misc/mp3me/queue/processing
+processed_dir=~/Dropbox/Misc/mp3me/queue/processed
+published_dir=~/Dropbox/Misc/mp3me/queue/published
+log_dir=~/Dropbox/Misc/mp3me/queue/log
+runtime_dir=~/Dropbox/Misc/mp3me/queue/runtime
 
-if [ ! -e "$incoming_dir" ]
+mkdir -p "$incoming_dir"
+mkdir -p "$processed_dir"
+mkdir -p "$processing_dir"
+mkdir -p "$published_dir"
+mkdir -p "$log_dir"
+mkdir -p "$runtime_dir"
+
+podcast_xml_path=~/Dropbox/Web/ernie-podcast.xml
+
+# Lock file for running this script
+#
+pidfile="$runtime_dir/script_running.$(hostname).pid"
+
+if [ -e "$pidfile" ]
 then
-  echo "no incoming queue dir: $incoming_dir"
-  exit 2
+  echo "pidfile exists, aborting: $pidfile"
+  exit 3
 fi
+echo "$$" > "$pidfile"
 
-
-for file in $incoming_dir/*
+find "$incoming_dir"/ -type f | while read file
 do
   echo $file
-  # already audio, probably ready to be listened
+
+  logfile="$log_dir/$(basename "$file").log"
+
+  # already audio, probably ready to be published
   #
   if echo "$file" | grep -q \\.mp3$
   then
     echo "Audio/mp3 file"
-    # look for metadata
-    #
+    # mv "$file" $published_dir/
+    
   # already video, convert to audio
   # 
-  elif echo "$file" | grep -q \\.mp4$
+  elif echo "$file" | grep -q \\.mp4$ || echo "$file" | grep -q \\.3gp$
   then
     echo "Video/mp4 file"
-    audio_file=$(echo $file | sed 's/mp4$/mp3/')
-    echo ffmpeg -i $file $audio_file
+    echo "Logging to $logfile"
+    processing_file="$processing_dir/$(basename "$file")"
+    mv "$file" "$processing_file"
+    audio_file=$(echo "$processing_file" | sed 's/\.[a-zA-Z0-9]*$/.mp3/')
+
+    if ffmpeg -i "$processing_file" "$audio_file" >> "$logfile" 2>&1
+    then
+      mv "$processing_file" "$processed_dir/"
+    else
+      mv "$processing_file" "$file"
+    fi
   # file with youtube URL
   #
   elif grep -q ^http.*youtube.com/ "$file"
   then
     echo "File containing URL"
-    for url in $(grep ^http.*youtube.com/ "$file")
+    echo "Logging to $logfile"
+    processing_file="$processing_dir/$(basename "$file")"
+    mv "$file" "$processing_file"
+    for url in $(grep ^http.*youtube.com/ "$processing_file")
     do
-      echo youtube-dl -f 17 --title "$url"
+      pushd "$incoming_dir"
+      if youtube-dl -f 17 --title "$url" >> "$logfile" 2>&1
+      then
+        mv "$processing_file" "$processed_dir/"
+      else
+        mv "$processing_file" "$file"
+      fi
+      popd
     done
-
+  else
+    echo "Can't detect file and next action for: $file"
   fi
 done
 
 
 
 node `dirname $0`/generate_ernie_podcast_xml.js > $podcast_xml_path
+
+rm "$pidfile"
