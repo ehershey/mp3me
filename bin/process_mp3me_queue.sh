@@ -32,9 +32,11 @@ then
 fi
 echo "$$" > "$pidfile"
 
-find "$incoming_dir"/ -type f | while read file
+tempfile=$(mktemp /tmp/process_mp3m3_queue.XXXXXX)
+find "$incoming_dir"/ -type f > "$tempfile"
+while read file
 do
-  echo $file
+  echo "$file"
 
   logfile="$log_dir/$(basename "$file").log"
 
@@ -83,7 +85,7 @@ do
   else
     echo "Can't detect file and next action for: $file"
   fi
-done
+done < "$tempfile"
 
 
 
