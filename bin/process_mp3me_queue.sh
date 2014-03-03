@@ -57,7 +57,7 @@ do
     mv "$file" "$processing_file"
     audio_file=$(echo "$processing_file" | sed 's/\.[a-zA-Z0-9]*$/.mp3/')
 
-    if ffmpeg -i "$processing_file" "$audio_file" >> "$logfile" 2>&1
+    if ffmpeg -y -i "$processing_file" "$audio_file" >> "$logfile" 2>&1
     then
       mv "$processing_file" "$processed_dir/"
     else
