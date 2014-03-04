@@ -49,7 +49,7 @@ do
     
   # already video, convert to audio
   # 
-  elif echo "$file" | grep -q \\.mp4$ || echo "$file" | grep -q \\.3gp$
+  elif echo "$file" | grep -q \\.mp4$ || echo "$file" | grep -q \\.3gp$ || echo "$file" | grep -q \\.m4v$ || echo "$file" | grep -q \\.mov$
   then
     echo "Video/mp4 file"
     echo "Logging to $logfile"
