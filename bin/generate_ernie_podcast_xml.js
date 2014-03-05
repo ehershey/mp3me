@@ -1,3 +1,65 @@
 #!/usr/bin/env node
 
 var podcast = require('podcast');
+
+var now = new Date();
+
+var config = { 
+  imageurl: 'http://dropbox.ernie.org/podcast/index.jpg',
+  description: "Ernie's Running Podcast is a podcast containing content curated by Ernie for him to listen to while running and commuting. It consists mainly of the audio portion of interesting youtube videos from tech conferences and other interesting long form presentations.",
+  author : 'Ernie Hershey',
+  subtitle : 'Audio feed for Ernie to listen to while running',
+  categories: [ 'Technology', 'Health', 'Entertainment' ],
+};
+
+var feedOptions = { 
+    title: "Ernie's Running Podcast",
+    description: config.description,
+    feed_url: 'http://dropbox.ernie.org/podcast/index.xml',
+    site_url: 'http://dropbox.ernie.org/podcast/index.html',
+    image_url: config.imageurl,
+    docs: 'http://dropbox.ernie.org/podcast/docs.html',
+    author: config.author,
+    managingEditor: config.author,
+    webMaster: config.author,
+    copyright: now.getFullYear() + ' Ernie Hershey',
+    language: 'en',
+    categories: config.categories,
+    pubDate: now,
+    ttl: '60',
+    itunesAuthor: config.author,
+    itunesSubtitle: config.subtitle,
+    itunesSummary: config.description,
+    itunesOwner: { name: config.author, email:'podcast@ernie.org' },
+    itunesExplicit: false,
+    itunesCategory: {
+        "name": "Technology",
+        "subcats": null
+    },
+    itunesImage: config.imageurl
+
+}
+var feed = new podcast(feedOptions);
+
+
+/* loop over data and add to feed */
+feed.item({
+    title:  'item title',
+    description: 'use this for the content. It can include html.',
+    url: 'http://example.com/article4?this&that', // link to the item
+    guid: '1123', // optional - defaults to url
+    categories: ['Category 1','Category 2','Category 3','Category 4'], // optional - array of item categories
+    author: 'Guest Author', // optional - defaults to feed author property
+    date: 'May 27, 2012', // any format that js Date can parse.
+    lat: 33.417974, //optional latitude field for GeoRSS
+    long: -111.933231, //optional longitude field for GeoRSS
+    enclosure : {url:'...', file:'path-to-file'}, // optional enclosure
+    itunesAuthor: 'Max Nowack',
+    itunesExplicit: false,
+    itunesSubtitle: 'I am a sub title',
+    itunesSummary: 'I am a summary',
+    itunesDuration: 12345,
+    itunesKeywords: ['javascript','podcast']
+});
+
+process.stdout.write(feed.xml);
