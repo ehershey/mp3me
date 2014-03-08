@@ -60,8 +60,16 @@ do
     if ffmpeg -y -i "$processing_file" "$audio_file" >> "$logfile" 2>&1
     then
       mv "$processing_file" "$processed_dir/"
+      if [ -e "$audio_file" ]
+      then
+        mv "$audio_file" "$incoming_dir"/
+      fi
     else
       mv "$processing_file" "$file"
+      if [ -e "$audio_file" ]
+      then
+        rm "$audio_file"
+      fi
     fi
   # file with youtube URL
   #
