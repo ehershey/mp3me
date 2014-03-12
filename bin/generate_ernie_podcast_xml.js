@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 var podcast = require('podcast');
+var glob = require('glob');
+var id3 = require('id3js');
 
 var incoming_dir = process.env.HOME + '/Dropbox/Misc/mp3me/queue/incoming';
 
@@ -42,6 +44,20 @@ var feedOptions = {
 
 }
 var feed = new podcast(feedOptions);
+
+glob(incoming_dir + '/*.mp3', {},function(err, files) { 
+  if(err) throw err;
+
+  for(var i = 0 ; i < files.length ; i++) {
+    var f = function(file) {
+      id3({ file: file,  type: id3.OPEN_LOCAL }, function(err, tags) {
+
+        console.log(file + ': ' + tags.artist + " - " + tags.title + ", " + tags.album);
+      });
+      };
+      f(files[i]);
+  }
+});
 
 var basename = 'filename.mp3';
 
