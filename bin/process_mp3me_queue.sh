@@ -1,4 +1,13 @@
 #!/bin/bash
+#
+# Look for various format files in an incoming queue directory,
+# turn them into mp3 files suitable for download as podcast files.
+#
+# Requirements:
+# ffmpeg
+# youtube-dl
+# eyed3
+
 set -x
 
 # Error on unset variables
@@ -46,6 +55,8 @@ do
   then
     echo "Audio/mp3 file"
     # mv "$file" $published_dir/
+
+    # Check for id3 data
     
   # already video, convert to audio
   # 
@@ -82,7 +93,7 @@ do
     for url in $(grep ^http.*youtube.com/ "$processing_file")
     do
       pushd "$incoming_dir"
-      if youtube-dl -f 17 --title "$url" >> "$logfile" 2>&1
+      if youtube-dl --write-description --write-info-json --write-annotations --write-thumbnail --audio-format mp3 --add-metadata --xattrs --extract-audio --format bestaudio "$url" >> "$logfile" 2>&1
       then
         mv "$processing_file" "$processed_dir/"
       else
