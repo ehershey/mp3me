@@ -93,7 +93,7 @@ do
     for url in $(grep ^http.*youtube.com/ "$processing_file")
     do
       pushd "$incoming_dir"
-      if youtube-dl --write-description --write-info-json --write-annotations --write-thumbnail --audio-format mp3 --add-metadata --xattrs --extract-audio --format bestaudio "$url" >> "$logfile" 2>&1
+      if youtube-dl --no-playlist --write-description --write-info-json --write-annotations --write-thumbnail --audio-format mp3 --add-metadata --xattrs --extract-audio --format bestaudio "$url" >> "$logfile" 2>&1
       then
         mv "$processing_file" "$processed_dir/"
       else
