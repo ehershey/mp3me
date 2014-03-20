@@ -50,9 +50,18 @@ glob(incoming_dir + '/*.mp3', {},function(err, files) {
 
   for(var i = 0 ; i < files.length ; i++) {
     var f = function(file) {
+      var title = '';
+      var description = '';
       id3({ file: file,  type: id3.OPEN_LOCAL }, function(err, tags) {
 
-        console.log(file + ': ' + tags.artist + " - " + tags.title + ", " + tags.album);
+      if(tags.title === null) {
+        title = file;
+      }
+
+        console.log(file + ": \n")
+        console.log('title: ' + title);
+        console.log('description: ');
+        console.log(description);
       });
       };
       f(files[i]);
