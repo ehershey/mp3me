@@ -3,6 +3,7 @@
 var podcast = require('podcast');
 var glob = require('glob');
 var id3 = require('id3js');
+var path = require('path');
 
 var incoming_dir = process.env.HOME + '/Dropbox/Misc/mp3me/queue/incoming';
 
@@ -55,7 +56,7 @@ glob(incoming_dir + '/*.mp3', {},function(err, files) {
       id3({ file: file,  type: id3.OPEN_LOCAL }, function(err, tags) {
 
       if(tags.title === null) {
-        title = file;
+        title = path.basename(file);
       }
 
         console.log(file + ": \n")
