@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/ehershey/mp3me",
   "dependencies": {
+    "glob": "^3.2.9",
     "podcast": "~0.1.0"
   }
 }
