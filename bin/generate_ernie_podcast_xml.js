@@ -46,7 +46,7 @@ var feedOptions = {
 }
 var feed = new podcast(feedOptions);
 
-glob(incoming_dir + '/*.mp3', {},function(err, files) { 
+glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) { 
   if(err) throw err;
 
   for(var i = 0 ; i < files.length ; i++) {
@@ -58,11 +58,12 @@ glob(incoming_dir + '/*.mp3', {},function(err, files) {
       if(tags.title === null) {
         title = path.basename(file);
       }
-
-        console.log(file + ": \n")
-        console.log('title: ' + title);
-        console.log('description: ');
-        console.log(description);
+        console.log(tags);
+        // console.log(file + ": \n")
+        // console.log('title: ' + title);
+        // console.log('description: ');
+        // console.log(description);
+        feed.item( { title: title } );
       });
       };
       f(files[i]);
