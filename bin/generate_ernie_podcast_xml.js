@@ -55,12 +55,14 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
       var description = '';
       id3({ file: file,  type: id3.OPEN_LOCAL }, function(err, tags) {
 
-      if(tags.title === null) {
+      title = tags.title;
+      if(title === null) {
         title = path.basename(file);
       }
-        console.log(tags);
+        // console.log(tags);
         // console.log(file + ": \n")
-        // console.log('title: ' + title);
+         // console.log('title: ' + title);
+         // console.log('tags.title: ' + tags.title);
         // console.log('description: ');
         // console.log(description);
         feed.item( { title: title } );
