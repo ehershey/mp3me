@@ -101,6 +101,25 @@ do
       fi
       popd
     done
+  # file with vimeo URL
+  #
+  elif grep -q ^http.*vimeo.com/ "$file"
+  then
+    echo "File containing URL"
+    echo "Logging to $logfile"
+    processing_file="$processing_dir/$(basename "$file")"
+    mv "$file" "$processing_file"
+    for url in $(grep ^http.*vimeo.com/ "$processing_file")
+    do
+      pushd "$incoming_dir"
+      if youtube-dl --no-playlist --write-description --write-info-json --write-annotations --write-thumbnail --audio-format mp3 --add-metadata --xattrs --extract-audio --format bestaudio "$url" >> "$logfile" 2>&1
+      then
+        mv "$processing_file" "$processed_dir/"
+      else
+        mv "$processing_file" "$file"
+      fi
+      popd
+    done
   else
     echo "Can't detect file and next action for: $file"
   fi
