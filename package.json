@@ -32,9 +32,10 @@
   },
   "homepage": "https://github.com/ehershey/mp3me",
   "dependencies": {
-    "id3js": "^1.1.3",
-    "podcast": "~0.1.0",
     "glob": "~3.2.9",
+    "id3js": "^1.1.3",
+    "node-uuid": "^1.4.1",
+    "podcast": "~0.1.0",
     "xattr-async": "~0.1.2"
   }
 }
