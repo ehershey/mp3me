@@ -4,8 +4,10 @@ var podcast = require('podcast');
 var glob = require('glob');
 var id3 = require('id3js');
 var path = require('path');
+var uuid = require('node-uuid');
 
 var incoming_dir = process.env.HOME + '/Dropbox/Misc/mp3me/queue/incoming';
+var baseurl = 'http://tempdir.ernie.org/podcast/content/';
 
 var now = new Date();
 
@@ -53,11 +55,12 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
     var f = function(file) {
       var title = '';
       var description = '';
+      var basename = path.basename(file);
       id3({ file: file,  type: id3.OPEN_LOCAL }, function(err, tags) {
 
       title = tags.title;
-      if(title === null) {
-        title = path.basename(file);
+      if(title === null || title === '') {
+        title = basename;
       }
         // console.log(tags);
         // console.log(file + ": \n")
@@ -65,7 +68,12 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
          // console.log('tags.title: ' + tags.title);
         // console.log('description: ');
         // console.log(description);
-        feed.item( { title: title } );
+        feed.item( { 
+          title: title,
+          description: description,
+          url: baseurl + basename,
+          guid: uuid.v4() // optional - defaults to url
+        } );
       });
       };
       f(files[i]);
@@ -78,8 +86,8 @@ var basename = 'filename.mp3';
 feed.item({
     title:  'item title',
     description: 'use this for the content. It can include html.',
-    url: 'http://tempdir.ernie.org/podcast/content/' + basename,
-    guid: '1123', // optional - defaults to url
+    url: baseurl + basename,
+    guid: uuid.v4(), // optional - defaults to url
     // categories: ['Category 1','Category 2','Category 3','Category 4'], // optional - array of item categories
     author: 'Guest Author', // optional - defaults to feed author property
     date: 'May 27, 2012', // any format that js Date can parse.
