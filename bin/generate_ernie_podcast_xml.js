@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+var fs = require('fs');
 var podcast = require('podcast');
 var glob = require('glob');
 var id3 = require('id3js');
@@ -53,28 +54,49 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
 
   for(var i = 0 ; i < files.length ; i++) {
     var f = function(file) {
-      var title = '';
-      var description = '';
-      var basename = path.basename(file);
-      id3({ file: file,  type: id3.OPEN_LOCAL }, function(err, tags) {
+      fs.stat(file, function(err, stats) {
+        if(err) throw err;
+        var title = '';
+        var description = '';
+        var basename = path.basename(file);
+        id3({ file: file,  type: id3.OPEN_LOCAL }, function(err, tags) {
 
-      title = tags.title;
-      if(title === null || title === '') {
-        title = basename;
-      }
-        // console.log(tags);
-        // console.log(file + ": \n")
-         // console.log('title: ' + title);
-         // console.log('tags.title: ' + tags.title);
-        // console.log('description: ');
-        // console.log(description);
-        feed.item( { 
-          title: title,
-          description: description,
-          url: baseurl + basename,
-          guid: uuid.v4() // optional - defaults to url
-        } );
-      });
+          title = tags.title;
+          if(title === null || title === '') {
+            title = basename;
+          }
+            console.log('...');
+            console.log('tags: ');
+            console.log(tags);
+            console.log('file: ');
+            console.log(file)
+            console.log('title: ');
+            console.log(title);
+            console.log('tags.title: ');
+            console.log(tags.title);
+            console.log('description: ');
+            console.log(description);
+            console.log('...');
+            feed.item( { 
+    title:  'item title',
+    description: 'use this for the content. It can include html.',
+    url: baseurl + basename,
+    author: 'Guest Author', // optional - defaults to feed author property
+    date: 'May 27, 2012', // any format that js Date can parse.
+              // title: title,
+              // description: description,
+              // url: baseurl + basename,
+              guid: uuid.v4(), // optional - defaults to url
+              //date: stats.mtime,
+    itunesAuthor: 'Max Nowack',
+    itunesExplicit: false,
+    itunesSubtitle: 'I am a sub title',
+    itunesSummary: 'I am a summary',
+    itunesDuration: 12345,
+    itunesKeywords: ['javascript','podcast']
+            });
+          });
+        });
       };
       f(files[i]);
   }
@@ -101,6 +123,27 @@ feed.item({
     itunesDuration: 12345,
     itunesKeywords: ['javascript','podcast']
 });
+
+/* loop over data and add to feed */
+feed.item({
+    title:  'item title',
+    description: 'use this for the content. It can include html.',
+    url: baseurl + basename,
+    guid: uuid.v4(), // optional - defaults to url
+    // categories: ['Category 1','Category 2','Category 3','Category 4'], // optional - array of item categories
+    author: 'Guest Author', // optional - defaults to feed author property
+    date: 'May 27, 2012', // any format that js Date can parse.
+    // lat: 33.417974, //optional latitude field for GeoRSS
+    // long: -111.933231, //optional longitude field for GeoRSS
+    // enclosure : {url:'...', file:'path-to-file'}, // optional enclosure
+    itunesAuthor: 'Max Nowack',
+    itunesExplicit: false,
+    itunesSubtitle: 'I am a sub title',
+    itunesSummary: 'I am a summary',
+    itunesDuration: 12345,
+    itunesKeywords: ['javascript','podcast']
+});
+
 
 console.log(feed.xml())
   // process.stdout.write(feed.xml);
