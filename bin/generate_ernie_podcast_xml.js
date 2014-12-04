@@ -65,18 +65,18 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
           if(title === null || title === '') {
             title = basename;
           }
-            console.log('...');
-            console.log('tags: ');
-            console.log(tags);
-            console.log('file: ');
-            console.log(file)
-            console.log('title: ');
-            console.log(title);
-            console.log('tags.title: ');
-            console.log(tags.title);
-            console.log('description: ');
-            console.log(description);
-            console.log('...');
+            // console.log('...');
+            // console.log('tags: ');
+            // console.log(tags);
+            // console.log('file: ');
+            // console.log(file)
+            // console.log('title: ');
+            // console.log(title);
+            // console.log('tags.title: ');
+            // console.log(tags.title);
+            // console.log('description: ');
+            // console.log(description);
+            // console.log('...');
             feed.item( { 
     title:  'item title',
     description: 'use this for the content. It can include html.',
@@ -88,7 +88,7 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
               // url: baseurl + basename,
               guid: uuid.v4(), // optional - defaults to url
               //date: stats.mtime,
-    itunesAuthor: 'Max Nowack',
+    itunesAuthor: config.author,
     itunesExplicit: false,
     itunesSubtitle: 'I am a sub title',
     itunesSummary: 'I am a summary',
@@ -116,7 +116,7 @@ feed.item({
     // lat: 33.417974, //optional latitude field for GeoRSS
     // long: -111.933231, //optional longitude field for GeoRSS
     // enclosure : {url:'...', file:'path-to-file'}, // optional enclosure
-    itunesAuthor: 'Max Nowack',
+    itunesAuthor: config.author,
     itunesExplicit: false,
     itunesSubtitle: 'I am a sub title',
     itunesSummary: 'I am a summary',
