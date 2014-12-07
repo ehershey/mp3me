@@ -8,13 +8,13 @@
       <xsl:element name="html">
          <xsl:attribute name="id">podcast</xsl:attribute>
          <head>
-            <title><xsl:value-of select="$title"/> - powered by FeedBurner</title>
-            <link href="//feedburner.google.com/fb/lib/stylesheets/undohtml.css" rel="stylesheet" type="text/css" media="all"/>
-            <link href="//feedburner.google.com/fb/feed-styles/bf30.css" rel="stylesheet" type="text/css" media="all"/>
+            <title><xsl:value-of select="$title"/> - powered by mp3me</title>
+            <link href="//ehershey.github.io/mp3me/static/undohtml.css" rel="stylesheet" type="text/css" media="all"/>
+            <link href="//ehershey.github.io/mp3me/static/bf30.css" rel="stylesheet" type="text/css" media="all"/>
       <link rel="alternate" type="application/rss+xml" title="{$title}" href="{$feedUrl}"/>
             <xsl:element name="script">
                <xsl:attribute name="type">text/javascript</xsl:attribute>
-               <xsl:attribute name="src">//feedburner.google.com/fb/feed-styles/bf30.js</xsl:attribute>
+               <xsl:attribute name="src">//ehershey.github.io/mp3me/static/bf30.js</xsl:attribute>
             </xsl:element>
          </head>
          <xsl:apply-templates select="rss/channel"/>
@@ -38,7 +38,7 @@
                      </xsl:otherwise>
                   </xsl:choose>
                </h1>
-               <h2>A <span style="color:#E33906">podcast</span> powered by FeedBurner</h2>
+               <h2>A <span style="color:#E33906">podcast</span> powered by mp3me</h2>
                <p style="clear:both"/>
             </div>
             <div id="bodyblock">
@@ -85,10 +85,8 @@
           <div style="padding-bottom:8px;">
             <a href="http://juicereceiver.sourceforge.net/" title="Get more info about Juice"><img src="//feedburner.google.com/fb/feed-styles/images/badge_juice.gif" alt=""/></a>
             <a href="http://GetFireAnt.com" title="Get more info about FireAnt and videoblogging"><img src="//feedburner.google.com/fb/feed-styles/images/get_fireant_80x15.gif" alt=""/></a>
-            <a href="http://www.dopplerradio.net/" title="Get more info about Doppler"><img src="http://www.dopplerradio.net/wp-content/dopplerbutton.gif"/></a>
             <br/>
             <a href="http://www.nimiq.nl/" title="Get more info about NIMIQ"><img src="//feedburner.google.com/fb/feed-styles/images/badge_nimiq_small.gif"/></a>
-            <a href="http://winpodder.com" title="Get more info about WinPodder"><img src="http://winpodder.com/otherimages/pillb.jpg" alt=""/></a>
             <a href="http://www.ziepod.com" title="Get more info about Ziepod"><img src="http://www.ziepod.com/ZiepodGetButton.png" alt=""/></a>
           </div>
           <xsl:choose>
