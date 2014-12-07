@@ -24,11 +24,11 @@
       <link>http://ehershey.github.io/mp3me</link>
     </image>
     <itunes:category text="Technology" />
-    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://ehershey.github.io/static/feed.xml" /><feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="erniemp3me" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><media:copyright>All rights reserved</media:copyright><media:thumbnail url="http://www.gravatar.com/avatar/19a77e55bafa14d8c1943adaa8c030d4.png" /><media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Technology</media:category><itunes:summary>Content curated by Ernie (summary)</itunes:summary><item>
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://ehershey.github.io/mp3me/static/feed.xml" /><feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="erniemp3me" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><media:copyright>All rights reserved</media:copyright><media:thumbnail url="http://www.gravatar.com/avatar/19a77e55bafa14d8c1943adaa8c030d4.png" /><media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Technology</media:category><itunes:summary>Content curated by Ernie (summary)</itunes:summary><item>
       <guid isPermaLink="false">asdasdasdguidasdasd12345</guid>
       <title>#3 Title Number Three</title>
       <pubDate>Wed, 03 Dec 2014 22:45:02 +0000</pubDate>
-      <link>http://ehershey.github.io/static/item3.html</link>
+      <link>http://ehershey.github.io/mp3me/static/item3.html</link>
       <itunes:duration>00:36:49</itunes:duration>
       <itunes:author>Ernie Hershey</itunes:author>
       <itunes:explicit>yes</itunes:explicit>
@@ -43,7 +43,7 @@
       <guid isPermaLink="false">asdasdasdguidasdasd12346</guid>
       <title>#2 Title Number Two</title>
       <pubDate>Mon, 24 Nov 2014 23:06:22 +0000</pubDate>
-      <link>http://ehershey.github.io/static/item2.html</link>
+      <link>http://ehershey.github.io/mp3me/static/item2.html</link>
       <itunes:duration>00:33:40.83</itunes:duration>
       <itunes:author>Ernie Hershey</itunes:author>
       <itunes:explicit>yes</itunes:explicit>
@@ -58,7 +58,7 @@
       <guid isPermaLink="false">asdasdasdguidasdasd12347</guid>
       <title>#1 Title Number One</title>
       <pubDate>Sun, 23 Nov 2014 22:16:32 +0000</pubDate>
-      <link>http://ehershey.github.io/static/item1.html</link>
+      <link>http://ehershey.github.io/mp3me/static/item1.html</link>
       <itunes:duration>00:46:02.63</itunes:duration>
       <itunes:author>Ernie Hershey</itunes:author>
       <itunes:explicit>yes</itunes:explicit>
