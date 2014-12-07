@@ -38,7 +38,7 @@
                      </xsl:otherwise>
                   </xsl:choose>
                </h1>
-               <h2>A <span style="color:#E33906">podcast</span> powered by mp3me</h2>
+               <h2>A <span style="color:#E33906">podcast</span> powered by <a href="//ehershey.github.io/mp3me">mp3me</a></h2>
                <p style="clear:both"/>
             </div>
             <div id="bodyblock">
