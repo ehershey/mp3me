@@ -9,8 +9,8 @@
     <language>en</language>
     <copyright>All rights reserved</copyright>
     <webMaster>mp3me@ernie.org (Ernie Hershey)</webMaster>
-    <description>Content curated by Ernie</description>
-    <itunes:subtitle>Content curated by Ernie</itunes:subtitle>
+    <description>Content curated by Ernie (Description)</description>
+    <itunes:subtitle>Content curated by Ernie (subtitle)</itunes:subtitle>
     <itunes:owner>
       <itunes:name>Ernie Hershey</itunes:name>
       <itunes:email>mp3me@ernie.org</itunes:email>
@@ -24,62 +24,50 @@
       <link>http://ehershey.github.io/mp3me</link>
     </image>
     <itunes:category text="Technology" />
-    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.gimletmedia.com/hearreplyall" /><feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="hearreplyall" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><media:copyright>All rights reserved</media:copyright><media:thumbnail url="http://i1.sndcdn.com/avatars-000116177580-6q9skc-original.jpg" /><media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Technology</media:category><itunes:summary>A show about the internet, hosted by PJ Vogt and Alex Goldman. From @gimletmedia.</itunes:summary><item>
-      <guid isPermaLink="false">tag:soundcloud,2010:tracks/179851815</guid>
-      <title>#3 We Know What You Did</title>
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://ehershey.github.io/static/feed.xml" /><feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="erniemp3me" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><media:copyright>All rights reserved</media:copyright><media:thumbnail url="http://www.gravatar.com/avatar/19a77e55bafa14d8c1943adaa8c030d4.png" /><media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Technology</media:category><itunes:summary>Content curated by Ernie (summary)</itunes:summary><item>
+      <guid isPermaLink="false">asdasdasdguidasdasd12345</guid>
+      <title>#3 Title Number Three</title>
       <pubDate>Wed, 03 Dec 2014 22:45:02 +0000</pubDate>
-      <link>https://soundcloud.com/replyall/01-3-i-didnt-mean-to-break-the-internet</link>
-      <itunes:duration>00:18:44</itunes:duration>
+      <link>http://ehershey.github.io/static/item3.html</link>
+      <itunes:duration>00:36:49</itunes:duration>
       <itunes:author>Ernie Hershey</itunes:author>
       <itunes:explicit>yes</itunes:explicit>
-      <itunes:summary>Twenty years ago, Ethan Zuckerman did something terrible on the internet. And he's still living with the consequences.</itunes:summary>
-      <itunes:subtitle>Twenty years ago, Ethan Zuckerman did something t…</itunes:subtitle>
-      <description>Twenty years ago, Ethan Zuckerman did something terrible on the internet. And he's still living with the consequences.</description>
-      <enclosure type="audio/mpeg" url="http://www.podtrac.com/pts/redirect.mp3/feeds.soundcloud.com/stream/179851815-replyall-01-3-i-didnt-mean-to-break-the-internet.mp3" length="36294955" />
-      <itunes:image href="http://i1.sndcdn.com/artworks-000099127937-xo06a0-original.jpg" />
-    <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Gimlet</dc:creator><media:content url="http://www.podtrac.com/pts/redirect.mp3/feeds.soundcloud.com/stream/179851815-replyall-01-3-i-didnt-mean-to-break-the-internet.mp3" fileSize="36294955" type="audio/mpeg" /></item>
+      <itunes:summary>Item Summary #3</itunes:summary>
+      <itunes:subtitle>Item Subtitle #3</itunes:subtitle>
+      <description>Item Description #3</description>
+      <enclosure type="audio/mpeg" url="http://dropbox.ernie.org/Splunks%20Hunk%20A%20Powerful%20Way%20to%20Query%20and%20Visualize%20Your%20Data%20Stored%20in%20MongoDB%20%20MongoDB.mp3" length="35348810" />
+      <itunes:image href="http://dummyimage.com/200x200/000/fff&amp;text=item+0x233+image" />
+      <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ernie Hershey</dc:creator>
+      <media:content url="http://dropbox.ernie.org/Splunks%20Hunk%20A%20Powerful%20Way%20to%20Query%20and%20Visualize%20Your%20Data%20Stored%20in%20MongoDB%20%20MongoDB.mp3" fileSize="35348810" type="audio/mpeg" /></item>
     <item>
-      <guid isPermaLink="false">tag:soundcloud,2010:tracks/178489631</guid>
-      <title>#2 The Secret, Gruesome Internet For Doctors</title>
+      <guid isPermaLink="false">asdasdasdguidasdasd12346</guid>
+      <title>#2 Title Number Two</title>
       <pubDate>Mon, 24 Nov 2014 23:06:22 +0000</pubDate>
-      <link>https://soundcloud.com/replyall/2-the-secret-gruesome-internet-for-doctors</link>
-      <itunes:duration>00:20:41</itunes:duration>
+      <link>http://ehershey.github.io/static/item2.html</link>
+      <itunes:duration>00:33:40.83</itunes:duration>
       <itunes:author>Ernie Hershey</itunes:author>
       <itunes:explicit>yes</itunes:explicit>
-      <itunes:summary>An app called Figure One wants to be Instagram, but for doctors. Why would doctors need their own Instagram? We spy on the secret &amp; disgusting medical internet, plus we speak to one of its residents. </itunes:summary>
-      <itunes:subtitle>An app called Figure One wants to be Instagram, b…</itunes:subtitle>
-      <description>An app called Figure One wants to be Instagram, but for doctors. Why would doctors need their own Instagram? We spy on the secret &amp; disgusting medical internet, plus we speak to one of its residents. </description>
-      <enclosure type="audio/mpeg" url="http://www.podtrac.com/pts/redirect.mp3/feeds.soundcloud.com/stream/178489631-replyall-2-the-secret-gruesome-internet-for-doctors.mp3" length="49941338" />
-      <itunes:image href="http://i1.sndcdn.com/artworks-000098208660-upv6rq-original.jpg" />
-    <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Gimlet</dc:creator><media:content url="http://www.podtrac.com/pts/redirect.mp3/feeds.soundcloud.com/stream/178489631-replyall-2-the-secret-gruesome-internet-for-doctors.mp3" fileSize="49941338" type="audio/mpeg" /></item>
+      <itunes:summary>Item Summary #2</itunes:summary>
+      <itunes:subtitle>Item Subtitle #2</itunes:subtitle>
+      <description>Item Description #2</description>
+      <enclosure type="audio/mpeg" url="http://dropbox.ernie.org/Basic%20Ops%20Skills%20and%20Tools%20for%20Beginners%20%20MongoDB.mp3" length="32333652" />
+      <itunes:image href="http://dummyimage.com/200x200/000/fff&amp;text=item+0x232+image" />
+      <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ernie Hershey</dc:creator>
+      <media:content url="http://dropbox.ernie.org/Basic%20Ops%20Skills%20and%20Tools%20for%20Beginners%20%20MongoDB.mp3" fileSize="32333652" type="audio/mpeg" /></item>
     <item>
-      <guid isPermaLink="false">tag:soundcloud,2010:tracks/178485892</guid>
-      <title>#1 An App Sends A Stranger To Say  I Love You</title>
-      <pubDate>Mon, 24 Nov 2014 22:39:34 +0000</pubDate>
-      <link>https://soundcloud.com/replyall/1-an-app-sends-a-stranger-to-say-i-love-you</link>
-      <itunes:duration>00:15:20</itunes:duration>
+      <guid isPermaLink="false">asdasdasdguidasdasd12347</guid>
+      <title>#1 Title Number One</title>
+      <pubDate>Sun, 23 Nov 2014 22:16:32 +0000</pubDate>
+      <link>http://ehershey.github.io/static/item1.html</link>
+      <itunes:duration>00:46:02.63</itunes:duration>
       <itunes:author>Ernie Hershey</itunes:author>
       <itunes:explicit>yes</itunes:explicit>
-      <itunes:summary>What happens when a woman sends a stocky blond stranger to tell her ex she loves him. </itunes:summary>
-      <itunes:subtitle>What happens when a woman sends a stocky blond st…</itunes:subtitle>
-      <description>What happens when a woman sends a stocky blond stranger to tell her ex she loves him. </description>
-      <enclosure type="audio/mpeg" url="http://www.podtrac.com/pts/redirect.mp3/feeds.soundcloud.com/stream/178485892-replyall-1-an-app-sends-a-stranger-to-say-i-love-you.mp3" length="37111622" />
-      <itunes:image href="http://i1.sndcdn.com/artworks-000098206059-lbpncc-original.jpg" />
-    <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Gimlet</dc:creator><media:content url="http://www.podtrac.com/pts/redirect.mp3/feeds.soundcloud.com/stream/178485892-replyall-1-an-app-sends-a-stranger-to-say-i-love-you.mp3" fileSize="37111622" type="audio/mpeg" /></item>
-    <item>
-      <guid isPermaLink="false">tag:soundcloud,2010:tracks/175708017</guid>
-      <title>Ernie Hershey Mic Test</title>
-      <pubDate>Thu, 06 Nov 2014 23:25:29 +0000</pubDate>
-      <link>https://soundcloud.com/replyall/reply-all-mic-test</link>
-      <itunes:duration>00:00:16</itunes:duration>
-      <itunes:author>Ernie Hershey</itunes:author>
-      <itunes:explicit>yes</itunes:explicit>
-      <itunes:summary>A podcast about the internet, hosted by PJ Vogt and Alex Goldman.  From Gimlet Media.  Coming soon. </itunes:summary>
-      <itunes:subtitle>A podcast about the internet, hosted by PJ Vogt a…</itunes:subtitle>
-      <description>A podcast about the internet, hosted by PJ Vogt and Alex Goldman.  From Gimlet Media.  Coming soon. </description>
-      <enclosure type="audio/mpeg" url="http://www.podtrac.com/pts/redirect.mp3/feeds.soundcloud.com/stream/175708017-replyall-reply-all-mic-test.mp3" length="641144" />
-      <itunes:image href="http://i1.sndcdn.com/artworks-000097908544-m1t4ws-original.jpg" />
-    <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Gimlet</dc:creator><media:content url="http://www.podtrac.com/pts/redirect.mp3/feeds.soundcloud.com/stream/175708017-replyall-reply-all-mic-test.mp3" fileSize="641144" type="audio/mpeg" /></item>
-  <media:credit role="author">Gimlet</media:credit><media:rating>nonadult</media:rating><media:description type="plain">A show about the internet, hosted by PJ Vogt and Alex Goldman. From @gimletmedia.</media:description></channel>
-</rss>100  8193    0  8193    0     0  51127      0 --:--:-- --:--:-- --:--:-- 51206
-
+      <itunes:summary>Item Summary #1</itunes:summary>
+      <itunes:subtitle>Item Subtitle #1</itunes:subtitle>
+      <description>Item Description #1</description>
+      <enclosure type="audio/mpeg" url="http://dropbox.ernie.org/Getting%20Started%20with%20Civic%20Application%20Development--hWPrBFMmR0.mp3" length="14023816" />
+      <itunes:image href="http://dummyimage.com/200x200/000/fff&amp;text=item+0x231+image" />
+      <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ernie Hershey</dc:creator>
+      <media:content url="http://dropbox.ernie.org/Getting%20Started%20with%20Civic%20Application%20Development--hWPrBFMmR0.mp3" fileSize="14023816" type="audio/mpeg" /></item>
+  <media:credit role="author">Ernie Hershey</media:credit><media:rating>adult</media:rating><media:description type="plain">Content curated by Ernie (media:description)</media:description></channel>
+</rss>
