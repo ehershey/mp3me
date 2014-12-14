@@ -6,9 +6,13 @@ var glob = require('glob');
 var id3 = require('id3js');
 var path = require('path');
 var uuid = require('node-uuid');
+var jinja = require('jinja-js');
 
 var incoming_dir = process.env.HOME + '/Dropbox/Misc/mp3me/queue/incoming';
 var baseurl = 'http://tempdir.ernie.org/podcast/content/';
+var feed_template_file = "./template/feed.xml"
+
+
 
 var now = new Date();
 
@@ -19,6 +23,10 @@ var config = {
   subtitle : 'Audio feed for Ernie to listen to while running',
   categories: [ 'Technology', 'Health', 'Entertainment' ],
 };
+
+var template_data = { 
+  title: config.title
+}
 
 var feedOptions = { 
     title: "Ernie's Running Podcast",
@@ -102,48 +110,12 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
   }
 });
 
-var basename = 'filename.mp3';
-
-/* loop over data and add to feed */
-feed.item({
-    title:  'item title',
-    description: 'use this for the content. It can include html.',
-    url: baseurl + basename,
-    guid: uuid.v4(), // optional - defaults to url
-    // categories: ['Category 1','Category 2','Category 3','Category 4'], // optional - array of item categories
-    author: 'Guest Author', // optional - defaults to feed author property
-    date: 'May 27, 2012', // any format that js Date can parse.
-    // lat: 33.417974, //optional latitude field for GeoRSS
-    // long: -111.933231, //optional longitude field for GeoRSS
-    // enclosure : {url:'...', file:'path-to-file'}, // optional enclosure
-    itunesAuthor: config.author,
-    itunesExplicit: false,
-    itunesSubtitle: 'I am a sub title',
-    itunesSummary: 'I am a summary',
-    itunesDuration: 12345,
-    itunesKeywords: ['javascript','podcast']
-});
-
-/* loop over data and add to feed */
-feed.item({
-    title:  'item title',
-    description: 'use this for the content. It can include html.',
-    url: baseurl + basename,
-    guid: uuid.v4(), // optional - defaults to url
-    // categories: ['Category 1','Category 2','Category 3','Category 4'], // optional - array of item categories
-    author: 'Guest Author', // optional - defaults to feed author property
-    date: 'May 27, 2012', // any format that js Date can parse.
-    // lat: 33.417974, //optional latitude field for GeoRSS
-    // long: -111.933231, //optional longitude field for GeoRSS
-    // enclosure : {url:'...', file:'path-to-file'}, // optional enclosure
-    itunesAuthor: 'Max Nowack',
-    itunesExplicit: false,
-    itunesSubtitle: 'I am a sub title',
-    itunesSummary: 'I am a summary',
-    itunesDuration: 12345,
-    itunesKeywords: ['javascript','podcast']
+fs.readFile(feed_tempalate_file, 'utf8', function (err,data) {
+    if (err) {
+          return console.log(err);
+            }
+  process.stdout.write(jinja.render(data, template_data));
 });
 
 
-console.log(feed.xml())
-  // process.stdout.write(feed.xml);
+
