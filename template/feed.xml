@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/mp3me/static/rss2enclosuresfull.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://ehershey.github.io/mp3me/static/itemcontent.css"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+  <channel>
+    <title>{{title}}</title>
+    <link>http://ehershey.github.io/mp3me</link>
+    <pubDate>Thu, 04 Dec 2014 17:00:20 +0000</pubDate>
+    <lastBuildDate>Thu, 04 Dec 2014 17:00:20 +0000</lastBuildDate>
+    <ttl>1</ttl>
+    <language>en</language>
+    <copyright>All rights reserved</copyright>
+    <webMaster>mp3me@ernie.org (Ernie Hershey)</webMaster>
+    <description>Content curated by Ernie (Description)</description>
+    <itunes:subtitle>Content curated by Ernie (subtitle)</itunes:subtitle>
+    <itunes:owner>
+      <itunes:name>Ernie Hershey</itunes:name>
+      <itunes:email>mp3me@ernie.org</itunes:email>
+    </itunes:owner>
+    <itunes:author>Ernie Hershey</itunes:author>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:image href="http://www.gravatar.com/avatar/19a77e55bafa14d8c1943adaa8c030d4.png" />
+    <image>
+      <url>http://www.gravatar.com/avatar/19a77e55bafa14d8c1943adaa8c030d4.png</url>
+      <title>Ernie Hershey</title>
+      <link>http://ehershey.github.io/mp3me</link>
+    </image>
+    <itunes:category text="Technology" />
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://ehershey.github.io/mp3me/static/feed.xml" /><feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="erniemp3me" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><media:copyright>All rights reserved</media:copyright><media:thumbnail url="http://www.gravatar.com/avatar/19a77e55bafa14d8c1943adaa8c030d4.png" /><media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Technology</media:category><itunes:summary>Content curated by Ernie (summary)</itunes:summary><item>
+      <guid isPermaLink="false">asdasdasdguidasdasd12345</guid>
+      <title>#3 Title Number Three</title>
+      <pubDate>Wed, 03 Dec 2014 22:45:02 +0000</pubDate>
+      <link>http://ehershey.github.io/mp3me/static/item3.html</link>
+      <itunes:duration>00:36:49</itunes:duration>
+      <itunes:author>Ernie Hershey</itunes:author>
+      <itunes:explicit>yes</itunes:explicit>
+      <itunes:summary>Item Summary #3</itunes:summary>
+      <itunes:subtitle>Item Subtitle #3</itunes:subtitle>
+      <description>Item Description #3</description>
+      <enclosure type="audio/mpeg" url="http://dropbox.ernie.org/Splunks%20Hunk%20A%20Powerful%20Way%20to%20Query%20and%20Visualize%20Your%20Data%20Stored%20in%20MongoDB%20%20MongoDB.mp3" length="35348810" />
+      <itunes:image href="http://dummyimage.com/200x200/000/fff&amp;text=item+0x233+image" />
+      <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ernie Hershey</dc:creator>
+      <media:content url="http://dropbox.ernie.org/Splunks%20Hunk%20A%20Powerful%20Way%20to%20Query%20and%20Visualize%20Your%20Data%20Stored%20in%20MongoDB%20%20MongoDB.mp3" fileSize="35348810" type="audio/mpeg" /></item>
+    <item>
+      <guid isPermaLink="false">asdasdasdguidasdasd12346</guid>
+      <title>#2 Title Number Two</title>
+      <pubDate>Mon, 24 Nov 2014 23:06:22 +0000</pubDate>
+      <link>http://ehershey.github.io/mp3me/static/item2.html</link>
+      <itunes:duration>00:33:40.83</itunes:duration>
+      <itunes:author>Ernie Hershey</itunes:author>
+      <itunes:explicit>yes</itunes:explicit>
+      <itunes:summary>Item Summary #2</itunes:summary>
+      <itunes:subtitle>Item Subtitle #2</itunes:subtitle>
+      <description>Item Description #2</description>
+      <enclosure type="audio/mpeg" url="http://dropbox.ernie.org/Basic%20Ops%20Skills%20and%20Tools%20for%20Beginners%20%20MongoDB.mp3" length="32333652" />
+      <itunes:image href="http://dummyimage.com/200x200/000/fff&amp;text=item+0x232+image" />
+      <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ernie Hershey</dc:creator>
+      <media:content url="http://dropbox.ernie.org/Basic%20Ops%20Skills%20and%20Tools%20for%20Beginners%20%20MongoDB.mp3" fileSize="32333652" type="audio/mpeg" /></item>
+    <item>
+      <guid isPermaLink="false">asdasdasdguidasdasd12347</guid>
+      <title>#1 Title Number One</title>
+      <pubDate>Sun, 23 Nov 2014 22:16:32 +0000</pubDate>
+      <link>http://ehershey.github.io/mp3me/static/item1.html</link>
+      <itunes:duration>00:46:02.63</itunes:duration>
+      <itunes:author>Ernie Hershey</itunes:author>
+      <itunes:explicit>yes</itunes:explicit>
+      <itunes:summary>Item Summary #1</itunes:summary>
+      <itunes:subtitle>Item Subtitle #1</itunes:subtitle>
+      <description>Item Description #1</description>
+      <enclosure type="audio/mpeg" url="http://dropbox.ernie.org/Getting%20Started%20with%20Civic%20Application%20Development--hWPrBFMmR0.mp3" length="14023816" />
+      <itunes:image href="http://dummyimage.com/200x200/000/fff&amp;text=item+0x231+image" />
+      <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ernie Hershey</dc:creator>
+      <media:content url="http://dropbox.ernie.org/Getting%20Started%20with%20Civic%20Application%20Development--hWPrBFMmR0.mp3" fileSize="14023816" type="audio/mpeg" /></item>
+  <media:credit role="author">Ernie Hershey</media:credit><media:rating>adult</media:rating><media:description type="plain">Content curated by Ernie (media:description)</media:description></channel>
+</rss>
