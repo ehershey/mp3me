@@ -3,9 +3,13 @@
   <channel>
     <title>{{title}}</title>
     <link>http://ehershey.github.io/mp3me</link>
+    <!--
     <pubDate>Thu, 04 Dec 2014 17:00:20 +0000</pubDate>
     <lastBuildDate>Thu, 04 Dec 2014 17:00:20 +0000</lastBuildDate>
-    <ttl>1</ttl>
+    -->
+    <pubDate>{{pubDate}}</pubDate>
+    <lastBuildDate>{{lastBuildDate}}</lastBuildDate>
+    <ttl>{{ttl}}</ttl>
     <language>en</language>
     <copyright>All rights reserved</copyright>
     <webMaster>mp3me@ernie.org (Ernie Hershey)</webMaster>

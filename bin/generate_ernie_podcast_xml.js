@@ -17,6 +17,7 @@ var feed_template_file = "./template/feed.xml"
 var now = new Date();
 
 var config = { 
+  title: "Ernie's Running Podcast",
   imageurl: 'http://dropbox.ernie.org/podcast/index.jpg',
   description: "Ernie's Running Podcast is a podcast containing content curated by Ernie for him to listen to while running and commuting. It consists mainly of the audio portion of interesting youtube videos from tech conferences and other interesting long form presentations.",
   author : 'Ernie Hershey',
@@ -25,7 +26,10 @@ var config = {
 };
 
 var template_data = { 
-  title: config.title
+  title: config.title,
+  ttl: 1,
+  pubDate: now,
+  lastBuildDate: now
 }
 
 var feedOptions = { 
