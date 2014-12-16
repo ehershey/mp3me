@@ -110,7 +110,7 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
   }
 });
 
-fs.readFile(feed_tempalate_file, 'utf8', function (err,data) {
+fs.readFile(feed_template_file, 'utf8', function (err,data) {
     if (err) {
           return console.log(err);
             }
