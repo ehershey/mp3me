@@ -20,11 +20,11 @@
       <itunes:email>mp3me@ernie.org</itunes:email>
     </itunes:owner>
     <itunes:author>Ernie Hershey</itunes:author>
-    <itunes:explicit>no</itunes:explicit>
-    <itunes:image href="http://www.gravatar.com/avatar/19a77e55bafa14d8c1943adaa8c030d4.png" />
+    <itunes:explicit>{{explicit}}</itunes:explicit>
+    <itunes:image href="{{feed_image}}" />
     <image>
-      <url>http://www.gravatar.com/avatar/19a77e55bafa14d8c1943adaa8c030d4.png</url>
-      <title>Ernie Hershey</title>
+      <url>{{feed_image}}</url>
+      <title>Ernie Hershey Feed Image</title>
       <link>http://ehershey.github.io/mp3me</link>
     </image>
     <itunes:category text="Technology" />

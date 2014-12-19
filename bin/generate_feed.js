@@ -29,12 +29,12 @@ var template_data = {
   title: config.title,
   ttl: 1,
   pubDate: now,
-  lastBuildDate: now
+  lastBuildDate: now,
+  feed_image: "http://www.gravatar.com/avatar/19a77e55bafa14d8c1943adaa8c030d4.png",
+  explicit: "yes"
 }
 
 var feedOptions = { 
-    title: "Ernie's Running Podcast",
-    description: config.description,
     feed_url: 'http://dropbox.ernie.org/podcast/index.xml',
     site_url: 'http://dropbox.ernie.org/podcast/index.html',
     image_url: config.imageurl,
@@ -59,7 +59,6 @@ var feedOptions = {
     itunesImage: config.imageurl
 
 }
-var feed = new podcast(feedOptions);
 
 glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) { 
   if(err) throw err;
@@ -89,7 +88,7 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
             // console.log('description: ');
             // console.log(description);
             // console.log('...');
-            feed.item( { 
+            feed_item =  { 
     title:  'item title',
     description: 'use this for the content. It can include html.',
     url: baseurl + basename,
@@ -106,7 +105,7 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
     itunesSummary: 'I am a summary',
     itunesDuration: 12345,
     itunesKeywords: ['javascript','podcast']
-            });
+            };
           });
         });
       };
