@@ -31,7 +31,8 @@ var template_data = {
   pubDate: now,
   lastBuildDate: now,
   feed_image: "http://www.gravatar.com/avatar/19a77e55bafa14d8c1943adaa8c030d4.png",
-  explicit: "yes"
+  explicit: "yes",
+  items: []
 }
 
 var feedOptions = { 
@@ -106,12 +107,13 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
     itunesDuration: 12345,
     itunesKeywords: ['javascript','podcast']
             };
+            template_data.items.push(feed_item);
           });
         });
       };
       f(files[i]);
   }
-});
+console.log(template_data);
 
 fs.readFile(feed_template_file, 'utf8', function (err,data) {
     if (err) {
@@ -121,4 +123,5 @@ fs.readFile(feed_template_file, 'utf8', function (err,data) {
 });
 
 
+});
 
