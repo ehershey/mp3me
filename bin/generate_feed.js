@@ -9,7 +9,9 @@ var path = require('path');
 var podcast = require('podcast');
 var uuid = require('node-uuid');
 
-var incoming_dir = process.env.HOME + '/Dropbox/Misc/mp3me/queue/incoming';
+// Allow $MP3ME_INCOMING_DIR environment variable to override default
+//
+var incoming_dir = process.env.MP3ME_INCOMING_DIR || process.env.HOME + '/Dropbox/Misc/mp3me/queue/incoming';
 var baseurl = 'http://tempdir.ernie.org/podcast/content/';
 var feed_template_file = "./template/feed.xml"
 
