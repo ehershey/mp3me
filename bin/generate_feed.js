@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 
 var fs = require('fs');
-var podcast = require('podcast');
 var glob = require('glob');
 var id3 = require('id3js');
-var path = require('path');
-var uuid = require('node-uuid');
 var jinja = require('jinja-js');
+var mongodb = require('mongodb');
+var path = require('path');
+var podcast = require('podcast');
+var uuid = require('node-uuid');
 
 var incoming_dir = process.env.HOME + '/Dropbox/Misc/mp3me/queue/incoming';
 var baseurl = 'http://tempdir.ernie.org/podcast/content/';
