@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+// var fs = require('promised-io/fs');
+var async = require('async');
 var fs = require('fs');
 var glob = require('glob');
 var id3 = require('id3js');
@@ -14,8 +16,6 @@ var uuid = require('node-uuid');
 var incoming_dir = process.env.MP3ME_INCOMING_DIR || process.env.HOME + '/Dropbox/Misc/mp3me/queue/incoming';
 var baseurl = 'http://tempdir.ernie.org/podcast/content/';
 var feed_template_file = "./template/feed.xml"
-
-
 
 var now = new Date();
 
@@ -64,12 +64,17 @@ var feedOptions = {
 
 }
 
-glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) { 
+glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
   if(err) throw err;
 
+  async.map(files, fs.stat, function(err, statses) {
+
   for(var i = 0 ; i < files.length ; i++) {
-    var f = function(file) {
-      fs.stat(file, function(err, stats) {
+    var f = function(i) {
+      var file = files[i];
+      var stats = statses[i];
+      console.log('file: ' + file);
+      console.log('stats: ' + stats);
         if(err) throw err;
         var title = '';
         var description = '';
@@ -93,38 +98,36 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
             // console.log(description);
             // console.log('...');
             feed_item =  { 
-    title:  'item title',
-    description: 'use this for the content. It can include html.',
-    url: baseurl + basename,
-    author: 'Guest Author', // optional - defaults to feed author property
-    date: 'May 27, 2012', // any format that js Date can parse.
+              title:  'item title',
+              description: 'use this for the content. It can include html.',
+              url: baseurl + basename,
+              author: 'Guest Author', // optional - defaults to feed author property
+              date: 'May 27, 2012', // any format that js Date can parse.
               // title: title,
               // description: description,
               // url: baseurl + basename,
               guid: uuid.v4(), // optional - defaults to url
               //date: stats.mtime,
-    itunesAuthor: config.author,
-    itunesExplicit: false,
-    itunesSubtitle: 'I am a sub title',
-    itunesSummary: 'I am a summary',
-    itunesDuration: 12345,
-    itunesKeywords: ['javascript','podcast']
+              itunesAuthor: config.author,
+              itunesExplicit: false,
+              itunesSubtitle: 'I am a sub title',
+              itunesSummary: 'I am a summary',
+              itunesDuration: 12345,
+              itunesKeywords: ['javascript','podcast']
             };
             template_data.items.push(feed_item);
-          });
-        });
-      };
-      f(files[i]);
-  }
-console.log(template_data);
+          }); // id3
+        }; // f()
+        f(i);
+      }; // for i in statses
+  }); // async.map
+  console.log(template_data);
 
-fs.readFile(feed_template_file, 'utf8', function (err,data) {
-    if (err) {
-          return console.log(err);
-            }
-  process.stdout.write(jinja.render(data, template_data));
-});
+  fs.readFile(feed_template_file, 'utf8', function (err,data) {
+    if (err) { return console.log(err); }
+    process.stdout.write(jinja.render(data, template_data));
+  }); // readfile
 
 
-});
+}); // glob
 
