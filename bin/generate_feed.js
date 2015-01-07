@@ -98,7 +98,7 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
             // console.log(description);
             // console.log('...');
             feed_item =  { 
-              title:  'item title',
+              title:  title,
               description: 'use this for the content. It can include html.',
               url: baseurl + basename,
               author: 'Guest Author', // optional - defaults to feed author property
@@ -120,13 +120,13 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
         }; // f()
         f(i);
       }; // for i in statses
-  }); // async.map
-  console.log(template_data);
+    console.log(template_data);
 
-  fs.readFile(feed_template_file, 'utf8', function (err,data) {
-    if (err) { return console.log(err); }
-    process.stdout.write(jinja.render(data, template_data));
-  }); // readfile
+    fs.readFile(feed_template_file, 'utf8', function (err,data) {
+      if (err) { return console.log(err); }
+      process.stdout.write(jinja.render(data, template_data));
+    }); // readfile
+  }); // async.map
 
 
 }); // glob

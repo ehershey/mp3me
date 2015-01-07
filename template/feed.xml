@@ -32,7 +32,7 @@
     {% for item in items %}
     <item>
       <guid isPermaLink="false">{{item.guid}}</guid>
-      <title>#3 Title Number Three</title>
+      <title>{{item.title}}</title>
       <pubDate>Wed, 03 Dec 2014 22:45:02 +0000</pubDate>
       <link>http://ehershey.github.io/mp3me/static/item3.html</link>
       <itunes:duration>00:36:49</itunes:duration>
