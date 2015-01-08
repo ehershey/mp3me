@@ -10,6 +10,7 @@ var mongodb = require('mongodb');
 var path = require('path');
 var podcast = require('podcast');
 var uuid = require('node-uuid');
+var xmlescape = require('xml-escape');
 
 // Allow $MP3ME_INCOMING_DIR environment variable to override default
 //
@@ -73,8 +74,8 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
     var f = function(i) {
       var file = files[i];
       var stats = statses[i];
-      console.log('file: ' + file);
-      console.log('stats: ' + stats);
+      // console.log('file: ' + file);
+      // console.log('stats: ' + stats);
         if(err) throw err;
         var title = '';
         var description = '';
@@ -97,6 +98,15 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
             // console.log('description: ');
             // console.log(description);
             // console.log('...');
+
+            // escape printable chars
+            //
+            title = xmlescape(title);
+
+            // Remove non-printable chars
+            //
+            title = title.replace(/[^\040-\176\200-\377]/gi, "");
+
             feed_item =  { 
               title:  title,
               description: 'use this for the content. It can include html.',
@@ -120,7 +130,7 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
         }; // f()
         f(i);
       }; // for i in statses
-    console.log(template_data);
+    // console.log(template_data);
 
     fs.readFile(feed_template_file, 'utf8', function (err,data) {
       if (err) { return console.log(err); }
