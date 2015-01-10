@@ -40,6 +40,7 @@
     "node-uuid": "^1.4.2",
     "podcast": "~0.1.0",
     "promised-io": "^0.3.4",
-    "xattr-async": "~0.1.2"
+    "xattr-async": "~0.1.2",
+    "xml-escape": "^1.0.0"
   }
 }
