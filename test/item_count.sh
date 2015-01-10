@@ -2,8 +2,10 @@
 #
 # Verify number of files in queue equals the number of items in the generated feed
 #
-incoming_dir="$HOME/Dropbox/Misc/mp3me/queue/incoming"
+incoming_dir="$(dirname "$0")"/media
 feed_script="$(dirname "$0")"/../bin/generate_feed.js
+
+export MP3ME_INCOMING_DIR="$incoming_dir"
 
 file_count=$(ls -1 "$incoming_dir"/*.{mp3,m4a} | wc -l)
 echo file_count: $file_count >&2
