@@ -1,0 +1,12 @@
+mp3 URL (x2)
+mp3 file length (x2)
+title
+pubdate
+html url
+duration
+summary
+subtitle
+description
+image (not sure if used anywhere)
+guid
+
