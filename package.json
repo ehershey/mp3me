@@ -1,10 +1,10 @@
 {
   "name": "mp3me",
-  "version": "0.1.0",
-  "description": "Generate an audio podcast from Youtube and other videos",
+  "version": "0.2.0",
+  "description": "Generate audio podcast from online media",
   "main": "index.js",
   "bin": {
-    "mp3me": "generate_ernie_podcast_xml.js"
+    "mp3me": "generate_feed.js"
   },
   "scripts": {
     "test": "test/test.sh"
