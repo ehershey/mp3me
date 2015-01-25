@@ -1,7 +1,7 @@
 mp3me
 =====
 
-Convert arbitrary media formats into an mp3 podcast
+Convert arbitrary media formats into an mp3 podcast for easy consumption
 
 Build Status
 ------------
