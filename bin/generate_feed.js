@@ -48,8 +48,6 @@ glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
     var f = function(i) {
       var file = files[i];
       var stats = statses[i];
-      // console.log('file: ' + file);
-      // console.log('stats: ' + stats);
         if(err) throw err;
         var title = '';
         var description = '';
