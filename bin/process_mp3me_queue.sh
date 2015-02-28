@@ -8,6 +8,7 @@
 # youtube-dl
 # eyed3
 
+
 set -x
 
 # Error on unset variables
@@ -28,6 +29,9 @@ mkdir -p "$published_dir"
 mkdir -p "$log_dir"
 mkdir -p "$runtime_dir"
 
+# This script will run a script with this name in the same directory
+#
+feed_script_name=generate_feed.js
 podcast_xml_path=~/Dropbox/Web/ernie-podcast.xml
 
 # Lock file for running this script
@@ -127,6 +131,6 @@ done < "$tempfile"
 
 
 
-node `dirname $0`/generate_ernie_podcast_xml.js > $podcast_xml_path
+node `dirname $0`/"$feed_script_name" > $podcast_xml_path
 
 rm "$pidfile"
