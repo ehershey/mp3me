@@ -11,6 +11,8 @@ var podcast = require('podcast');
 var uuid = require('node-uuid');
 var xmlescape = require('xml-escape');
 
+var autoupdate_version = 3;
+
 var config = require('lib/config');
 
 var now = new Date();
@@ -37,10 +39,8 @@ function pull_db_info(db, callback) {
 
   collection.find().toArray(function(err, results) {
     if (err) throw err;
-    walk_filesystem(results);
+    walk_filesystem(results, callback);
   });
-
-
 }
 
 MongoClient.connect(dburl, function(err, db)
@@ -52,6 +52,7 @@ MongoClient.connect(dburl, function(err, db)
   });
 }) // db connect
 
+function walk_filesystem(dbdata, callback) {
   glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
    if(err) throw err;
 
@@ -71,18 +72,6 @@ MongoClient.connect(dburl, function(err, db)
            if(title === null || title === '') {
              title = basename;
            }
-             // console.log('...');
-             // console.log('tags: ');
-             // console.log(tags);
-             // console.log('file: ');
-             // console.log(file)
-             // console.log('title: ');
-             // console.log(title);
-             // console.log('tags.title: ');
-             // console.log(tags.title);
-             // console.log('description: ');
-             // console.log(description);
-             // console.log('...');
 
              // escape printable chars
              //
@@ -101,7 +90,7 @@ MongoClient.connect(dburl, function(err, db)
                // title: title,
                // description: description,
                // url: baseurl + basename,
-               guid: 'uuid.v4()', // optional - defaults to url
+               // guid: 'uuid.v4()', // optional - defaults to url
                //date: stats.mtime,
                itunesAuthor: config.author,
                itunesExplicit: false,
@@ -120,8 +109,10 @@ MongoClient.connect(dburl, function(err, db)
      fs.readFile(feed_template_file, 'utf8', function (err,data) {
        if (err) { return console.log(err); }
        process.stdout.write(jinja.render(data, template_data));
+       callback();
      }); // readfile
    }); // async.map
 
 
   }); // glob
+} // walk_filesystem()
