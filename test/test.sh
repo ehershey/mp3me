@@ -1,10 +1,9 @@
 #!/bin/bash
-# 
+#
 # Mp3me test script
 #
+# Execute every file in same directory as this script
 #
-
-# Run every file in test directory
 #
 for test_file in "$(dirname "$0")"/*
 do
