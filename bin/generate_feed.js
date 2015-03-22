@@ -11,7 +11,7 @@ var podcast = require('podcast');
 var uuid = require('node-uuid');
 var xmlescape = require('xml-escape');
 
-var autoupdate_version = 3;
+var autoupdate_version = 5;
 
 var config = require('lib/config');
 
@@ -97,7 +97,8 @@ function walk_filesystem(dbdata, callback) {
                itunesSubtitle: 'I am a sub title',
                itunesSummary: 'I am a summary',
                itunesDuration: 12345,
-               itunesKeywords: ['javascript','podcast']
+               itunesKeywords: ['javascript','podcast'],
+               fileSize: stats.size
              };
              template_data.items.push(feed_item);
            }); // id3

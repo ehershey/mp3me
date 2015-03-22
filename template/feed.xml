@@ -41,10 +41,10 @@
       <itunes:summary>Item Summary #3</itunes:summary>
       <itunes:subtitle>Item Subtitle #3</itunes:subtitle>
       <description>Item Description #3</description>
-      <enclosure type="audio/mpeg" url="http://dropbox.ernie.org/Splunks%20Hunk%20A%20Powerful%20Way%20to%20Query%20and%20Visualize%20Your%20Data%20Stored%20in%20MongoDB%20%20MongoDB.mp3" length="35348810" />
+      <enclosure type="audio/mpeg" url="{{item.url}}" length="{{item.fileSize}}" />
       <itunes:image href="http://dummyimage.com/200x200/000/fff&amp;text=item+0x233+image" />
       <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ernie Hershey</dc:creator>
-      <media:content url="http://dropbox.ernie.org/Splunks%20Hunk%20A%20Powerful%20Way%20to%20Query%20and%20Visualize%20Your%20Data%20Stored%20in%20MongoDB%20%20MongoDB.mp3" fileSize="35348810" type="audio/mpeg" /></item>
+      <media:content url="{{item.url}}" fileSize="{{item.fileSize}}" type="audio/mpeg" /></item>
   {% endfor %}
  <media:credit role="author">Ernie Hershey</media:credit><media:rating>adult</media:rating><media:description type="plain">Content curated by Ernie (media:description)</media:description></channel>
 </rss>
