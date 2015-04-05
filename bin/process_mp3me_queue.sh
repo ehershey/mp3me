@@ -18,7 +18,7 @@ set -o nounset
 incoming_dir=~/Dropbox/Misc/mp3me/queue/incoming
 processing_dir=~/Dropbox/Misc/mp3me/queue/processing
 processed_dir=~/Dropbox/Misc/mp3me/queue/processed
-published_dir=~/Dropbox/Misc/mp3me/queue/published
+published_dir=~/Dropbox/Web/podcast/content
 log_dir=~/Dropbox/Misc/mp3me/queue/log
 runtime_dir=~/Dropbox/Misc/mp3me/queue/runtime
 
@@ -58,10 +58,10 @@ do
   if echo "$file" | grep -q \\.mp3$
   then
     echo "Audio/mp3 file"
-    # mv "$file" $published_dir/
+    mv "$file" $published_dir/
 
     # Check for id3 data
-    
+
   # already video, convert to audio
   # 
   elif echo "$file" | grep -q \\.mp4$ || echo "$file" | grep -q \\.3gp$ || echo "$file" | grep -q \\.m4v$ || echo "$file" | grep -q \\.mov$

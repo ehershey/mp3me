@@ -11,13 +11,13 @@ var podcast = require('podcast');
 var uuid = require('node-uuid');
 var xmlescape = require('xml-escape');
 
-var autoupdate_version = 5;
+var autoupdate_version = 9;
 
 var config = require('lib/config');
 
 var now = new Date();
 
-var incoming_dir = config.incoming_dir;
+var published_dir = config.published_dir;
 var feed_template_file = config.feed_template_file;
 var baseurl = config.baseurl;
 var dburl = config.dburl;
@@ -46,14 +46,13 @@ function pull_db_info(db, callback) {
 MongoClient.connect(dburl, function(err, db)
 {
   if (err) throw err;
-  console.log('got db');
   pull_db_info(db, function() { 
     db.close();
   });
 }) // db connect
 
 function walk_filesystem(dbdata, callback) {
-  glob(incoming_dir + '/*.{mp3,m4a}', {},function(err, files) {
+  glob(published_dir + '/*.{mp3,m4a}', {},function(err, files) {
    if(err) throw err;
 
    async.map(files, fs.stat, function(err, statses) {
@@ -84,7 +83,7 @@ function walk_filesystem(dbdata, callback) {
              feed_item =  {
                title:  title,
                description: 'use this for the content. It can include html.',
-               url: baseurl + basename,
+               url: baseurl + escape(basename),
                author: 'Guest Author', // optional - defaults to feed author property
                date: 'May 27, 2012', // any format that js Date can parse.
                // title: title,
