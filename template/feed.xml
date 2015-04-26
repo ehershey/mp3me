@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" media="screen" href="/mp3me/static/rss2enclosuresfull.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://ehershey.github.io/mp3me/static/itemcontent.css"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
   <channel>
     <title>{{title}}</title>
-    <link>http://ehershey.github.io/mp3me</link>
+    <link>{{url}}</link>
     <!--
     <pubDate>Thu, 04 Dec 2014 17:00:20 +0000</pubDate>
     <lastBuildDate>Thu, 04 Dec 2014 17:00:20 +0000</lastBuildDate>
@@ -13,7 +13,7 @@
     <language>en</language>
     <copyright>All rights reserved</copyright>
     <webMaster>mp3me@ernie.org (Ernie Hershey)</webMaster>
-    <description>Content curated by Ernie (Description)</description>
+    <description>{{description}}</description>
     <itunes:subtitle>Content curated by Ernie (subtitle)</itunes:subtitle>
     <itunes:owner>
       <itunes:name>Ernie Hershey</itunes:name>
@@ -35,12 +35,12 @@
       <title>{{item.title}}</title>
       <pubDate>Wed, 03 Dec 2014 22:45:02 +0000</pubDate>
       <link>http://ehershey.github.io/mp3me/static/item3.html</link>
-      <itunes:duration>00:36:49</itunes:duration>
-      <itunes:author>Ernie Hershey</itunes:author>
+      <itunes:duration>{{item.duration}}</itunes:duration>
+      <itunes:author>{{item.author}}</itunes:author>
       <itunes:explicit>yes</itunes:explicit>
-      <itunes:summary>Item Summary #3</itunes:summary>
-      <itunes:subtitle>Item Subtitle #3</itunes:subtitle>
-      <description>Item Description #3</description>
+      <itunes:summary>{{item.summary}}</itunes:summary>
+      <itunes:subtitle>{{item.subtitle}}</itunes:subtitle>
+      <description>{{item.description}}</description>
       <enclosure type="audio/mpeg" url="{{item.url}}" length="{{item.fileSize}}" />
       <itunes:image href="http://dummyimage.com/200x200/000/fff&amp;text=item+0x233+image" />
       <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ernie Hershey</dc:creator>
